@@ -16,11 +16,12 @@ FONCTION OUVEAU ETUDIANT
             - atao argument le $OLONA de izay etu anaovana login dia tsy miseho ny entany
             - mihena ny Quantite disponible rehefa acheter 
             - mitombo ny ligne vente miaraka amin'ny date,heure,id_produit,quantite
+VENTE:-AFIICHER LE TABLEAU CONTENAT LES PRODUITS VENDU
 
-
-
+5074
 VENDRE:
 fonction pour ajouter le produit du membre dans le produit_membre;
+creeer une fonction quii selct le oproduit de l7utilisateur pour le vendre
 
 V2:
 ajout : ajout d'une colone photo
