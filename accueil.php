@@ -43,6 +43,12 @@
                             
                             <input type="submit" value="Acheter">
                         </form>
+
+
+                        <form action="vendre.php" method="POST">
+                            <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
+                            <input type="submit" value="Vendre">
+                        </form>
                     </td>
                 </tr>
             <?php } ?>
