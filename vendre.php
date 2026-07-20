@@ -23,6 +23,7 @@
             <option value="<?php echo $p['id_produit']; ?>"><?php echo $p['nom']; ?></option>
         <?php } ?>
     </select>
+    
     <button type="submit">Vendre</button>
 </form>
 </body>
