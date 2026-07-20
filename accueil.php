@@ -26,7 +26,7 @@
             <?php foreach($valiny as $produit) { ?>
                 <tr>
 
-                    <td>Produit n°<?php echo $produit['id_produit']; ?></td>
+                     <td>Produit n°<?php echo $produit['id_produit']; ?></td>
                     
 
                     <td><strong><?php echo $produit['prix_vente']; ?> €</strong></td>
@@ -36,7 +36,7 @@
                     
 
                     <td>
-                        <form action="traitement_achat.php" method="POST" style="margin: 0;">
+                        <form action="traitement_vente.php" method="POST" style="margin: 0;">
                             <input type="hidden" name="id_produit_membre" value="<?php echo $produit['id_produit_membre']; ?>">
                             
                             <label>Qté :</label>

@@ -94,3 +94,31 @@ INSERT INTO produit_membre (id_produit_membre, id_produit, id_membre, prix_vente
 (19, 2, 10, 5.00, 2, '2026-07-20'),
 (20, 12, 10, 1.90, 5, '2026-07-20');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+V2
+
+ALTER TABLE produit_membre ADD photo VARCHAR(255);
+
+UPDATE produit_membre 
+SET photo = '10861192.jpg' 
+WHERE id_produit_membre IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+
+
+
+

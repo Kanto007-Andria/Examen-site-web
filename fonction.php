@@ -61,4 +61,12 @@ function ajout($etu, $olona) {
             
     return mysqli_query($db, $sql);
 }
+
+
+
+//v2
+
+function ajouter_image(){
+    
+}
 ?>

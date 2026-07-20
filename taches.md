@@ -11,3 +11,8 @@ FONCTION VOIR PRODUIT
 AFFICHAGE DASN ACEUIL 
 BASE DE DONE: ETU5014
 
+
+
+V2:
+ajout : ajout d'une colone photo
+ajout photo de base pour chaque ligne
