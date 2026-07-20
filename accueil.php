@@ -48,6 +48,6 @@
             <?php } ?>
         </tbody>
     </table>
-
+<a href="vente.php">regadrer les vente</a>
 </body>
 </html>

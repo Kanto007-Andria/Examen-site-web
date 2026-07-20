@@ -15,6 +15,7 @@ FONCTION OUVEAU ETUDIANT
         - fonction acheter
             - atao argument le $OLONA de izay etu anaovana login dia tsy miseho ny entany
             - mihena ny Quantite disponible rehefa acheter 
+            - mitombo ny ligne vente miaraka amin'ny date,heure,id_produit,quantite
 
 
 
