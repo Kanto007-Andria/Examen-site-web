@@ -27,16 +27,15 @@
         <tbody>
             <?php foreach($valiny as $produit) { ?>
                 <tr>
-
-                    <td>Produit n°<?php echo $produit['id_produit']; ?></td>
-                    
-
+                    <td><?php echo ($produit['nom_vendeur']); ?></td>
+                    <td><?php echo ($produit['nom_produit']); ?></td>
+                    <td> <?php echo $produit['id_produit_membre']; ?></td>
                     <td><strong><?php echo $produit['prix_vente']; ?> €</strong></td>
                     <td><?php echo $produit['quantite_dispo']; ?></td>
                     <td><?php echo $produit['date_dispo'] ? $produit['date_dispo'] : 'Non définie'; ?></td>
                     
                     <td>
-                        <form action="traitement_vendre.php" method="POST" style="margin: 0;">
+                        <form action="traitement_achat_produit.php" method="POST">
                             <input type="hidden" name="id_produit_membre" value="<?php echo $produit['id_produit_membre']; ?>">
                             
                             <label>Qte :</label>
