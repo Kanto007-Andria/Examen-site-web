@@ -36,7 +36,7 @@
                     
 
                     <td>
-                        <form action="traitement_achat.php" method="POST" style="margin: 0;">
+                        <form action="traitement_vendre.php" method="POST" style="margin: 0;">
                             <input type="hidden" name="id_produit_membre" value="<?php echo $produit['id_produit_membre']; ?>">
                             
                             <label>Qté :</label>
