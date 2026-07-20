@@ -17,9 +17,25 @@ function dbconnect()
 
     return $connect;
 }
-function voir_les_produits_a_vendre(){
+
+function voir_les_produits_a_vendre($OLONA){
     $db = dbconnect();
-    $sql = "SELECT * FROM produit_membre";
+    $condition = "";
+    if (!empty($OLONA)) {
+        $condition = " WHERE m.numero_etu != '$OLONA'";
+    }
+
+    $sql = "SELECT 
+                pm.id_produit_membre, 
+                pm.prix_vente, 
+                pm.quantite_dispo, 
+                pm.date_dispo,
+                p.nom AS nom_produit,
+                m.nom AS nom_vendeur
+            FROM produit_membre pm
+            JOIN produit p ON pm.id_produit = p.id_produit
+            JOIN membre m ON pm.id_membre = m.id_membre" . $condition;
+            
     $resultat = mysqli_query($db, $sql);
     $liste = array();
     while($produit = mysqli_fetch_assoc($resultat)) {
@@ -27,7 +43,7 @@ function voir_les_produits_a_vendre(){
     }
     
     return $liste; 
-}  
+}
 
 
 function login($olona) {
