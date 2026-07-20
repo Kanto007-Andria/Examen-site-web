@@ -30,24 +30,20 @@ function voir_les_produits_a_vendre(){
 }  
 
 
+function login($olona) {
+    $db = dbconnect(); 
+    
+    $sql = "SELECT * FROM membre WHERE numero_ETU = '$olona'";
+    $result = mysqli_query($db, $sql);
 
-
-function login($olona){
-    $NON="TSY MISY";
-    $sql = "SELECT * FROM membre WHERE numero_ETU ='$olona';";
-    $result = mysqli_query(dbconnect, $sql);
-
-   
-    $num_rows = mysqli_num_rows($result);
-
-    if ($num_rows > 0) {
-       
+    if (mysqli_num_rows($result) > 0) {
         return mysqli_fetch_assoc($result);
     } else {
-  return $NON;
+        return "TSY MISY";
     }
 }
 
+<<<<<<< HEAD
 function ampidirina_ny_entana_amidik($id_produit, $id_membre, $prix_vente, $quantite_dispo) {
     $db = dbconnect();
     
@@ -55,5 +51,8 @@ function ampidirina_ny_entana_amidik($id_produit, $id_membre, $prix_vente, $quan
             VALUES ($id_produit, $id_membre, $prix_vente, $quantite_dispo)";
     return mysqli_query($db, $sql);
 }
+=======
+
+>>>>>>> b1baf3c8a7f2e0a5d015c9deaae0d3076783e2cc
 
 ?>

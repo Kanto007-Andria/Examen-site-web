@@ -2,16 +2,13 @@
 include('fonction.php');
 
 $PERSONNE = $_POST['etu'];
+$VERIFICATION = login($PERSONNE);
 
-$VERIFIACTION = login($PERSONNE);
-
-if ($VERIFIACTION == "TSY MISY") {
-    
+if ($VERIFICATION == "TSY MISY") {
     header("Location: nouveau_formulaire.php");
-
+    exit();
 } else {
-   
     header("Location: acceuil.php?etu=" . $PERSONNE);
-
+    exit();
 }
 ?>
