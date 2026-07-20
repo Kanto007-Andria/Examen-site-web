@@ -18,6 +18,8 @@ FONCTION OUVEAU ETUDIANT
 
 
 
+VENDRE:
+fonction pour ajouter le produit du membre dans le produit_membre;
 
 V2:
 ajout : ajout d'une colone photo
