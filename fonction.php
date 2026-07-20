@@ -115,11 +115,14 @@ function liste_toutes_les_ventes() {
 
 
 function recuper_produit_non_vendu($id_membre){
-
-    $sql1="select id"
     $db = dbconnect();
-    $sql="select produit.* from produit join produit_membre on produit_membre.id_produit =produit.id_produit where produit_membre.id_membre='$id_membre';";
-    echo $sql;
+    $sql1 = "SELECT id_membre FROM membre WHERE numero_etu = '$id_membre'";
+    $resulta = mysqli_query($db, $sql1);
+
+    $row = mysqli_fetch_assoc($resulta);
+    $id_real_membre = $row['id_membre'];
+    $sql = "SELECT produit.* FROM produit JOIN produit_membre ON produit_membre.id_produit = produit.id_produit WHERE produit_membre.id_membre = '$id_real_membre'";
+   
     $resultat = mysqli_query($db, $sql);
     $liste = array();
     while($produit = mysqli_fetch_assoc($resultat)) {
@@ -128,6 +131,10 @@ function recuper_produit_non_vendu($id_membre){
     
     return $liste;
 }
+
+
+
+
 
 
 
