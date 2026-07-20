@@ -79,14 +79,43 @@ function ajout($etu, $olona) {
 }
 function acheter($id_produit_membre, $quantite_achetee) {
     $db = dbconnect();
-    $sql = "UPDATE produit_membre 
-            SET quantite_dispo = quantite_dispo - $quantite_achetee 
-            WHERE id_produit_membre = $id_produit_membre";
+    mysqli_query($db, "UPDATE produit_membre SET quantite_dispo = quantite_dispo - $quantite_achetee WHERE id_produit_membre = $id_produit_membre");
+    return mysqli_query($db, "INSERT INTO vente (date, heure, id_produit_membre, quantite) VALUES (CURDATE(), CURTIME(), $id_produit_membre, $quantite_achetee)");
+}
+
+function obtenir_total_ventes_membre($OLONA) {
+    $db = dbconnect();
+    $sql = "SELECT SUM(v.quantite * pm.prix_vente) AS total 
+            FROM vente v
+            JOIN produit_membre pm ON v.id_produit_membre = pm.id_produit_membre
+            JOIN membre m ON pm.id_membre = m.id_membre
+            WHERE m.numero_etu = '$OLONA'";
             
-    return mysqli_query($db, $sql);
+    $resultat = mysqli_query($db, $sql);
+    $row = mysqli_fetch_assoc($resultat);
+    return $row['total'] ? $row['total'] : 0;
+}
+
+function liste_toutes_les_ventes() {
+    $db = dbconnect();
+    $sql = "SELECT v.id_vente, v.date, v.heure, v.quantite, p.nom AS nom_produit, pm.prix_vente, m.nom AS nom_vendeur
+            FROM vente v
+            JOIN produit_membre pm ON v.id_produit_membre = pm.id_produit_membre
+            JOIN produit p ON pm.id_produit = p.id_produit
+            JOIN membre m ON pm.id_membre = m.id_membre
+            ORDER BY v.id_vente DESC";
+            
+    $resultat = mysqli_query($db, $sql);
+    $liste = array();
+    while($row = mysqli_fetch_assoc($resultat)) {
+        $liste[] = $row;
+    }
+    return $liste;
 }
 
 
+<<<<<<< HEAD
+=======
 function recuper_produit_non_vendu($id_membre){
     $db = dbconnect();
     $sql="select produit.* from produit join produit_membre on produit_membre.id_produit =produit.id_produit where produit_membre.id_membre='$id_membre';";
@@ -109,4 +138,5 @@ function  mivarotra(){
 
 
 
+>>>>>>> c179de1a046ea48f6f7fef5259ea79c4ea3d2d2c
 ?>

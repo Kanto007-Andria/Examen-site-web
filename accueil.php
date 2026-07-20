@@ -53,6 +53,7 @@
             <?php } ?>
         </tbody>
     </table>
+<<<<<<< HEAD
     <?PHP VAR_DUMP ($OLONA); ?>
                      
     
@@ -61,5 +62,8 @@
                             <input type="submit" value="Vendre">
                         </form>
                     
+=======
+<a href="vente.php">regadrer les vente</a>
+>>>>>>> aab00e68f64cfe410add78e658c61be1ba20ca56
 </body>
 </html>
