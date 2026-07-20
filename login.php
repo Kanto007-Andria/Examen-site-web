@@ -6,14 +6,12 @@
 </head>
 <body>
 
-    <h2>Ajouter un Nom</h2>
+    
 
     <form action="traitement_login.php" method="POST">
-        <label for="nom">Nom :</label>
-        <input type="text"  name="etu" placeholder="Entrez votre nom" required>
-        
-        <button type="submit">Entre</button>
-    </form>
+     <p>Entrez votre ETU:<input type="text" name="etu" placeholder="Entrez le numéro ETU" required></p>
+    <button type="submit">Entrer</button>
+</form>
 
 </body>
 </html>
