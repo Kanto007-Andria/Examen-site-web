@@ -115,3 +115,31 @@ INSERT INTO vente (date, heure, id_produit_membre, quantite) VALUES
 ('2026-07-20', '12:00:00', 1, 20),
 ('2026-07-20', '12:00:00', 1, 20),
 ('2026-07-20', '12:00:00', 1, 20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+V2
+
+ALTER TABLE produit_membre ADD photo VARCHAR(255);
+
+UPDATE produit_membre 
+SET photo = '10861192.jpg' 
+WHERE id_produit_membre IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+
+
+
+

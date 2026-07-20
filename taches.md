@@ -17,3 +17,8 @@ FONCTION OUVEAU ETUDIANT
             - mihena ny Quantite disponible rehefa acheter 
 
 
+
+
+V2:
+ajout : ajout d'une colone photo
+ajout photo de base pour chaque ligne
