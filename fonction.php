@@ -114,4 +114,27 @@ function liste_toutes_les_ventes() {
 }
 
 
+<<<<<<< HEAD
+=======
+function recuper_produit_non_vendu($id_membre){
+    $sal="select produit.* from produit join produit_membre on produit_membre.id_produit =produit.id_produit where produit_membre.id_membre='$id_membre';";
+    $resultat = mysqli_query($db, $sql);
+    $liste = array();
+    while($produit = mysqli_fetch_assoc($resultat)) {
+        $liste[] = $produit;
+    }
+    
+    return $liste;
+}
+
+
+
+function  mivarotra(){
+
+}
+
+
+
+
+>>>>>>> c179de1a046ea48f6f7fef5259ea79c4ea3d2d2c
 ?>

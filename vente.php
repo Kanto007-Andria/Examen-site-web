@@ -37,8 +37,8 @@
                 <tr>
                     <td>N° <?php echo $v['id_vente']; ?></td>
                     <td><?php echo $v['date']; ?> à <?php echo $v['heure']; ?></td>
-                    <td><?php echo htmlspecialchars($v['nom_vendeur']); ?></td>
-                    <td><?php echo htmlspecialchars($v['nom_produit']); ?></td>
+                    <td><?php echo $v['nom_vendeur']; ?></td>
+                    <td><?php echo $v['nom_produit']; ?></td>
                     <td><?php echo $v['prix_vente']; ?> €</td>
                     <td><?php echo $v['quantite']; ?></td>
                     <td><strong><?php echo $v['quantite'] * $v['prix_vente']; ?> €</strong></td>
