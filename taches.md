@@ -6,8 +6,14 @@ TRAITEMENT LOGIN
 FORMULAIRE POUR UN NOUVEAU ETUDIANT
 FONCTION OUVEAU ETUDIANT
 
-ACCEUIL:ETU5014:
-FONCTION VOIR PRODUIT 
-AFFICHAGE DASN ACEUIL 
-BASE DE DONE: ETU5014
+## ACCEUIL:ETU5014:
+    FONCTION VOIR PRODUIT
+        - SELECT produit membre
+        - JOIN produit et membre 
+        - AFFICHER id_produit_membre,prix_vente,quantite dispo,date dispo
+    ACHETER 
+        - fonction acheter
+            - atao argument le $OLONA de izay etu anaovana login dia tsy miseho ny entany
+            - mihena ny Quantite disponible rehefa acheter 
+
 

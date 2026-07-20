@@ -61,5 +61,15 @@ function ajout($etu, $olona) {
             
     return mysqli_query($db, $sql);
 }
+function acheter($id_produit_membre, $quantite_achetee) {
+    $db = dbconnect();
+    $sql = "UPDATE produit_membre 
+            SET quantite_dispo = quantite_dispo - $quantite_achetee 
+            WHERE id_produit_membre = $id_produit_membre";
+            
+    return mysqli_query($db, $sql);
+}
+
+
 
 ?>
