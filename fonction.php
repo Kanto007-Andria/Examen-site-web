@@ -88,14 +88,16 @@ function acheter($id_produit_membre, $quantite_achetee) {
 
 
 function recuper_produit_non_vendu($id_membre){
-    $sal="select produit.* from produit join produit_membre on produit_membre.id_produit =produit.id_produit where produit_membre.id_membre='$id_membre';";
-    $resultat = mysqli_query($db, $sql);
-    $liste = array();
-    while($produit = mysqli_fetch_assoc($resultat)) {
-        $liste[] = $produit;
-    }
+    $db = dbconnect();
+    $sql="select produit.* from produit join produit_membre on produit_membre.id_produit =produit.id_produit where produit_membre.id_membre='$id_membre';";
+    echo $sql;
+    // $resultat = mysqli_query($db, $sql);
+    // $liste = array();
+    // while($produit = mysqli_fetch_assoc($resultat)) {
+    //     $liste[] = $produit;
+    // }
     
-    return $liste;
+    // return $liste;
 }
 
 

@@ -1,6 +1,9 @@
 <?php
     include("fonction.php");
-    $OLONA = isset($_GET['etu']) ? $_GET['etu'] : ''; 
+    
+    // On cherche 'etu' ou 'utilisateur' dans l'URL (GET) OU dans le formulaire (POST)
+    $OLONA = $_GET['etu'] ?? $_GET['utilisateur'] ?? $_POST['etu'] ?? $_POST['utilisateur'] ?? ''; 
+    
     $valiny = voir_les_produits_a_vendre($OLONA);
 ?>
 <!DOCTYPE html>
@@ -22,6 +25,7 @@
                 <th>Quantité disponible</th>
                 <th>Date dispo</th>
                 <th>Action</th>
+                <th>Vendre mes produits</th>
             </tr>
         </thead>
         <tbody>
@@ -43,17 +47,19 @@
                             
                             <input type="submit" value="Acheter">
                         </form>
-
-
-                        <form action="vendre.php" method="POST">
-                            <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
-                            <input type="submit" value="Vendre">
-                        </form>
-                    </td>
+                        </td>
+                        
                 </tr>
             <?php } ?>
         </tbody>
     </table>
-
+    <?PHP VAR_DUMP ($OLONA); ?>
+                     
+    
+                        <form action="vendre.php" method="POST">
+                            <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
+                            <input type="submit" value="Vendre">
+                        </form>
+                    
 </body>
 </html>
