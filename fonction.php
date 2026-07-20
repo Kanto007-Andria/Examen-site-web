@@ -28,4 +28,23 @@ function voir_les_produits_a_vendre(){
     
     return $liste; 
 }  
+
+
+
+
+function login($olona){
+    $NON="TSY MISY";
+    $sql = "SELECT * FROM membre WHERE numero_ETU ='$olona';";
+    $result = mysqli_query(dbconnect, $sql);
+
+   
+    $num_rows = mysqli_num_rows($result);
+
+    if ($num_rows > 0) {
+       
+        return mysqli_fetch_assoc($result);
+    } else {
+  return $NON;
+    }
+}
 ?>
