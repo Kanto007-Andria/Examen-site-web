@@ -10,7 +10,7 @@
 
     <form action="traitement_login.php" method="POST">
         <label for="nom">Nom :</label>
-        <input type="text"  name="nom" placeholder="Entrez votre nom" required>
+        <input type="text"  name="etu" placeholder="Entrez votre nom" required>
         
         <button type="submit">Entre</button>
     </form>
