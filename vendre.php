@@ -6,6 +6,7 @@
 <body>
 
     <h1>Mettre un produit en vente</h1>
+    <h1>MetY VE EE </h1>
     <a href="accueil.php">Retour à l'accueil</a>
     <br><br>
 
