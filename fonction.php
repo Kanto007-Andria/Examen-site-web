@@ -47,4 +47,13 @@ function login($olona){
   return $NON;
     }
 }
+
+function ampidirina_ny_entana_amidik($id_produit, $id_membre, $prix_vente, $quantite_dispo) {
+    $db = dbconnect();
+    
+    $sql = "INSERT INTO produit_membre (id_produit, id_membre, prix_vente, quantite_dispo) 
+            VALUES ($id_produit, $id_membre, $prix_vente, $quantite_dispo)";
+    return mysqli_query($db, $sql);
+}
+
 ?>
