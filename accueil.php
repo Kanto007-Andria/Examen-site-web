@@ -25,7 +25,7 @@
                 <th>Quantité disponible</th>
                 <th>Date dispo</th>
                 <th>Action</th>
-                <th>Vendre mes produits</th>
+                <th>Image</th>
             </tr>
         </thead>
         <tbody>
@@ -48,12 +48,14 @@
                             <input type="submit" value="Acheter">
                         </form>
                         </td>
+                        <td><img src="IMAGE/<?php echo $produit['photo']; ?>" alt="Photo produit" width="50"></td>
                         
                 </tr>
             <?php } ?>
         </tbody>
     </table>
-    <?PHP VAR_DUMP ($OLONA); ?>
+        <a  href="vente.php">regarder les ventes</a>
+   
                      
     
                         <form action="vendre.php" method="POST">
@@ -61,5 +63,6 @@
                             <input type="submit" value="Vendre">
                         </form>
                     
+
 </body>
 </html>
