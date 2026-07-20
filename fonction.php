@@ -42,6 +42,7 @@ function login($olona) {
         return "TSY MISY";
     }
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 function ampidirina_ny_entana_amidik($id_produit, $id_membre, $prix_vente, $quantite_dispo) {
@@ -55,4 +56,15 @@ function ampidirina_ny_entana_amidik($id_produit, $id_membre, $prix_vente, $quan
 
 >>>>>>> b1baf3c8a7f2e0a5d015c9deaae0d3076783e2cc
 
+=======
+function ajout($etu, $olona) {
+    $db = dbconnect();
+    
+    $sql = "INSERT INTO membre (id_membre, nom, numero_etu) 
+            SELECT COALESCE(MAX(id_membre), 0) + 1, '$olona', '$etu' 
+            FROM membre";
+            
+    return mysqli_query($db, $sql);
+}
+>>>>>>> c7f78114ae4e9c9fa05ebf70765f1773f87bae34
 ?>

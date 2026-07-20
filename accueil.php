@@ -1,5 +1,6 @@
 <?php
     include("fonction.php");
+    $OLONA = $_GET['etu'];
     $valiny = voir_les_produits_a_vendre();
 ?>
 <!DOCTYPE html>

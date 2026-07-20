@@ -8,7 +8,7 @@ if ($VERIFICATION == "TSY MISY") {
     header("Location: nouveau_formulaire.php");
     exit();
 } else {
-    header("Location: acceuil.php?etu=" . $PERSONNE);
+    header("Location: accueil.php?etu=" . $PERSONNE);
     exit();
 }
 ?>
