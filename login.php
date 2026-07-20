@@ -12,7 +12,7 @@
         <label for="nom">Nom :</label>
         <input type="text"  name="nom" placeholder="Entrez votre nom" required>
         
-        <button type="submit">Entrez</button>
+        <button type="submit">Entre</button>
     </form>
 
 </body>
