@@ -114,8 +114,6 @@ function liste_toutes_les_ventes() {
 }
 
 
-<<<<<<< HEAD
-=======
 function recuper_produit_non_vendu($id_membre){
     $db = dbconnect();
     $sql="select produit.* from produit join produit_membre on produit_membre.id_produit =produit.id_produit where produit_membre.id_membre='$id_membre';";
@@ -138,5 +136,4 @@ function  mivarotra(){
 
 
 
->>>>>>> c179de1a046ea48f6f7fef5259ea79c4ea3d2d2c
 ?>
