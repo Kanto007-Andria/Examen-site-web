@@ -42,7 +42,13 @@ function login($olona) {
         return "TSY MISY";
     }
 }
-
-
-
+function ajout($etu, $olona) {
+    $db = dbconnect();
+    
+    $sql = "INSERT INTO membre (id_membre, nom, numero_etu) 
+            SELECT COALESCE(MAX(id_membre), 0) + 1, '$olona', '$etu' 
+            FROM membre";
+            
+    return mysqli_query($db, $sql);
+}
 ?>
