@@ -17,11 +17,15 @@ function dbconnect()
 
     return $connect;
 }
-
-
-
-    function voir_les_produits_a_vendre(){
+function voir_les_produits_a_vendre(){
+    $db = dbconnect();
     $sql = "SELECT * FROM produit_membre";
-    return (dbconnect(),$sql);
-}   
+    $resultat = mysqli_query($db, $sql);
+    $liste = array();
+    while($produit = mysqli_fetch_assoc($resultat)) {
+        $liste[] = $produit;
+    }
+    
+    return $liste; 
+}  
 ?>

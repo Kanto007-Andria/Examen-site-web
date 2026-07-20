@@ -11,11 +11,11 @@
 
     <h1>Liste des produits à vendre</h1>
 
-    <?php while($produit = mysqli_fetch_assoc($valiny)) { ?>
+    <?php foreach($valiny as $produit) { ?>
         
         <div>
             <h3>Produit n°<?php echo $produit['id_produit']; ?></h3>
-            <p>Prix : <strong><?php echo $produit['prix_vente']; ?> €</strong></p>
+            <p>Prix : <?php echo $produit['prix_vente']; ?> €</p>
             <p>Quantité disponible : <?php echo $produit['quantite_dispo']; ?></p>
             
             <form action="traitement_achat.php" method="POST">
@@ -27,6 +27,8 @@
                 <input type="submit" value="Acheter">
             </form>
         </div>        
+        <hr>
+        
     <?php } ?>
 
 </body>
