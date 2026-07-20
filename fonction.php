@@ -142,7 +142,9 @@ function recuper_produit_non_vendu($id_membre){
 
 
 
-function  mivarotra(){
+function  mivarotra($id_produit,$id_membre){
+    $sql=""
+
 
 }
 
