@@ -17,13 +17,14 @@
     <title>Document</title>
 </head>
 <body>
-<form action="traitement_vente.php" method="POST">
+<form action="amidy.php" method="POST">
     <select name="id_produit">
         <?php foreach ($valiny as $p) { ?>
             <option value="<?php echo $p['id_produit']; ?>"><?php echo $p['nom']; ?></option>
+          
         <?php } ?>
     </select>
-    
+    <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
     <button type="submit">Vendre</button>
 </form>
 </body>
