@@ -25,7 +25,7 @@
                 <th>Quantité disponible</th>
                 <th>Date dispo</th>
                 <th>Action</th>
-                <th>Vendre mes produits</th>
+                <th>Image</th>
             </tr>
         </thead>
         <tbody>
@@ -48,6 +48,7 @@
                             <input type="submit" value="Acheter">
                         </form>
                         </td>
+                        <td><img src="IMAGE/<?php echo $produit['photo']; ?>" alt="Photo produit" width="50"></td>
                         
                 </tr>
             <?php } ?>

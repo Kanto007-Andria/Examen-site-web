@@ -142,9 +142,9 @@ WHERE id_produit_membre IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1
 
 
 CREATE TABLE photo_produit (
-    ->     id_photo INT AUTO_INCREMENT PRIMARY KEY,
-    ->     nom_photo VARCHAR(255),
-    ->     id_produit_membre INT
-    -> );
+    id_photo INT AUTO_INCREMENT PRIMARY KEY,
+    nom_photo VARCHAR(255),
+    id_produit_membre INT
+);
 
 

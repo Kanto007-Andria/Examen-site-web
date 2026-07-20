@@ -31,7 +31,8 @@ function voir_les_produits_a_vendre($OLONA){
                 pm.quantite_dispo, 
                 pm.date_dispo,
                 p.nom AS nom_produit,
-                m.nom AS nom_vendeur
+                m.nom AS nom_vendeur,
+                pm.photo
             FROM produit_membre pm
             JOIN produit p ON pm.id_produit = p.id_produit
             JOIN membre m ON pm.id_membre = m.id_membre" . $condition;
