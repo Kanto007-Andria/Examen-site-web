@@ -1,4 +1,4 @@
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="traitement_photo.php" method="POST" enctype="multipart/form-data">
 
     <p>ID du produit :</p>
     <input type="number" name="id" required>
