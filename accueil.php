@@ -54,12 +54,13 @@
             <?php } ?>
         </tbody>
     </table>
-
-    <form action="vente.php" method="POST">
-                            <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
-                            <input type="submit" value="mes vente">
-                        </form>
+      
    
+                
+        <form action="vente.php" method="POST">
+                            <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
+                            <input type="submit" value="Mes vente">
+                        </form>     
     
                         <form action="vendre.php" method="POST">
                             <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">

@@ -87,6 +87,8 @@ function acheter($id_produit_membre, $quantite_achetee) {
     $sql="INSERT INTO vente (date, heure, id_produit_membre, quantite) VALUES 
 (CURDATE(), CURTIME(), $id_produit_membre, $quantite_achetee);";
 
+
+
  return mysqli_query($db, $sql);
 
 }
@@ -236,8 +238,36 @@ function mes_ventes($personne){
             JOIN produit_membre ON produit_membre.id_produit_membre = vente.id_produit_membre  
             WHERE produit_membre.id_membre = '$id_membre'
             GROUP BY vente.id_vente";
-
+        
     return mysqli_query($db, $sql);
+}
+
+
+function meilleure_vendeur(){
+    $db = dbconnect();
+    $sql1 = "select count(vente.id_vente)from vente;";
+    $resulta = mysqli_query($db, $sql1);
+
+    $row = mysqli_fetch_assoc($resulta);
+    $id_real_membre = $row['id_membre'];
+    
+    $sql2="select vente.date where vente.id='$id_real_membre';";
+    $resultat = mysqli_query($db, $sql2);
+
+    $row2 = mysqli_fetch_assoc($resultat);
+    $date = $row2['date'];
+
+    
+   $sql3="
+select   max(vente.quantite*produit_membre.prix_vente)from produit_membre join vente 
+ produit_membre.id_produit_membre=vente.id_produit_membre where vente.date='$date';";
+ $resultatfinal = mysqli_query($db, $sql3);
+    $liste = array();
+    while($produit = mysqli_fetch_assoc($resultatfinal)) {
+        $liste[] = $produit;
+    }
+    
+    return $liste;
 }
 
 
@@ -247,4 +277,16 @@ function mes_ventes($personne){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ?>
+
