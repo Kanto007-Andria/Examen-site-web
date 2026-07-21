@@ -25,10 +25,10 @@
         <?php } ?>
     </select>
     <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
-   <p>quantite  a Vendre <input type="numbrer" name="quantite"> </p>
+   <p>quantite  a Vendre <input type="number" name="quantite"> </p>
    <label for="ma-date">Date dispo :</label>
-   <input type="date" id="ma-date" name="date_selectionnee">
-<p>Prix de reference <input type="numbrer" name="quantite"> </p>
+   <input type="date" id="ma-date" name="date">
+<p>Prix de reference <input type="number" name="prix"> </p>
 
     <button type="submit">Vendre</button>
 </form>

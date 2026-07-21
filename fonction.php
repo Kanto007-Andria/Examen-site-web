@@ -213,9 +213,10 @@ function mivarotra($id_produit, $id_membre, $prix_vente, $quantite_dispo, $date_
   
     $sql = "INSERT INTO produit_membre (id_produit_membre, id_produit, id_membre, prix_vente, quantite_dispo, date_dispo, photo)
             SELECT COALESCE(MAX(id_produit_membre), 0) + 1, '$id_produit', '$id_membre', '$prix_vente', '$quantite_dispo', '$date_dispo', '$photo'
-            FROM produit_membre";
+            FROM produit_membre;";
 
     return mysqli_query($db, $sql);
+    
 }
 
 
