@@ -163,6 +163,4 @@ SELECT m.nom AS nom_membre, m.numero_etu, SUM(v.quantite) AS quantite_totale, SU
 
 
 
-INSERT INTO vente (date, heure, id_produit_membre, quantite) VALUES 
-('2026-07-20', '12:00:00', 1, 20),
 

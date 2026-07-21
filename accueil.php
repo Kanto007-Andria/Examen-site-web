@@ -54,9 +54,12 @@
             <?php } ?>
         </tbody>
     </table>
-        <a  href="vente.php">regarder les ventes</a>
+
+    <form action="vente.php" method="POST">
+                            <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">
+                            <input type="submit" value="mes vente">
+                        </form>
    
-                     
     
                         <form action="vendre.php" method="POST">
                             <input type="hidden" name="utilisateur" value="<?php echo $OLONA; ?>">

@@ -227,7 +227,18 @@ function mivarotra($id_produit, $id_membre, $prix_vente, $quantite_dispo, $date_
 }
 
 
+function mes_ventes($personne){
+    $db = dbconnect();
+    $id_membre = recuperer_id($personne);
 
+    $sql = "SELECT vente.*, produit_membre.*, SUM(vente.quantite * produit_membre.prix_vente) as total 
+            FROM vente 
+            JOIN produit_membre ON produit_membre.id_produit_membre = vente.id_produit_membre  
+            WHERE produit_membre.id_membre = '$id_membre'
+            GROUP BY vente.id_vente";
+
+    return mysqli_query($db, $sql);
+}
 
 
 

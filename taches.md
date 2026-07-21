@@ -23,9 +23,9 @@ VENDRE:
 fonction pour ajouter le produit du membre dans le produit_membre,
 ajout d'une balise, photo on fait empty si la personne insert alorsce sera celui que la personne entre;
 creer une fonction recuperer id
-creeer une fonction quii select le oproduit de l'utilisateur pour le vendre
-
-
-
 ajout : ajout d'une colone photo
 ajout photo de base pour chaque ligne
+creeer une fonction quii select le oproduit de l'utilisateur pour le vendre
+inserer dans vente les actions d'achat fait 
+
+
