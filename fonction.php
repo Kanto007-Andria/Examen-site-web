@@ -133,6 +133,70 @@ function recuper_produit_non_vendu($id_membre){
     return $liste;
 }
 
+function obtenir_ventes_par_categorie() {
+    $db = dbconnect();
+    $sql = "SELECT c.nom_categorie AS nom_categorie, SUM(v.quantite * pm.prix_vente) AS total_ventes
+            FROM vente v
+            JOIN produit_membre pm ON v.id_produit_membre = pm.id_produit_membre
+            JOIN produit p ON pm.id_produit = p.id_produit
+            JOIN categorie c ON p.id_categorie = c.id_categorie
+            GROUP BY c.nom_categorie";
+            
+    $resultat = mysqli_query($db, $sql);
+    
+    if (!$resultat) {
+        die("Erreur SQL dans les statistiques : " . mysqli_error($db) . "<br>Requête exécutée : " . $sql);
+    }
+    
+    $liste = array();
+    while($row = mysqli_fetch_assoc($resultat)) {
+        $liste[] = $row;
+    }
+    return $liste;
+}
+
+
+function obtenir_ventes_produits_par_categorie($nom_cat) {
+    $db = dbconnect();
+    
+    $sql = "SELECT p.id_produit, p.nom AS nom_produit, SUM(v.quantite * pm.prix_vente) AS total_produit
+            FROM vente v
+            JOIN produit_membre pm ON v.id_produit_membre = pm.id_produit_membre
+            JOIN produit p ON pm.id_produit = p.id_produit
+            JOIN categorie c ON p.id_categorie = c.id_categorie
+            WHERE c.nom_categorie = '$nom_cat'
+            GROUP BY p.id_produit, p.nom";
+            
+    $resultat = mysqli_query($db, $sql);
+    
+    $liste = array();
+    while($row = mysqli_fetch_assoc($resultat)) {
+        $liste[] = $row;
+    }
+    return $liste;
+}
+
+
+
+function obtenir_ventes_membres_par_produit($id_produit) {
+    $db = dbconnect();
+    
+
+    $sql = "SELECT m.nom AS nom_membre, m.numero_etu, SUM(v.quantite) AS quantite_totale, SUM(v.quantite * pm.prix_vente) AS total_depense
+            FROM vente v
+            JOIN produit_membre pm ON v.id_produit_membre = pm.id_produit_membre
+            JOIN membre m ON pm.id_membre = m.id_membre
+            WHERE pm.id_produit = $id_produit
+            GROUP BY m.id_membre, m.nom, m.numero_etu";
+            
+    $resultat = mysqli_query($db, $sql);
+    
+    $liste = array();
+    while($row = mysqli_fetch_assoc($resultat)) {
+        $liste[] = $row;
+    }
+    return $liste;
+}
 
 
 

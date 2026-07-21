@@ -148,3 +148,19 @@ CREATE TABLE photo_produit (
 );
 
 
+Statistique
+SELECT c.nom_categorie AS nom_categorie, SUM(v.quantite * pm.prix_vente) AS total_ventes
+            FROM vente v
+            JOIN produit_membre pm ON v.id_produit_membre = pm.id_produit_membre
+            JOIN produit p ON pm.id_produit = p.id_produit
+            JOIN categorie c ON p.id_categorie = c.id_categorie
+            GROUP BY c.nom_categorie
+
+
+
+SELECT m.nom AS nom_membre, m.numero_etu, SUM(v.quantite) AS quantite_totale, SUM(v.quantite * pm.prix_vente) AS total_depense
+            FROM vente v
+            JOIN produit_membre pm ON v.id_produit_membre = pm.id_produit_membre
+            JOIN membre m ON pm.id_membre = m.id_membre
+            WHERE pm.id_produit = 1
+            GROUP BY m.id_membre, m.nom, m.numero_etu

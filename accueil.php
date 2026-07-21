@@ -1,7 +1,7 @@
 <?php
     include("fonction.php");
     
-    // On cherche 'etu' ou 'utilisateur' dans l'URL (GET) OU dans le formulaire (POST)
+
     $OLONA = $_GET['etu'] ?? $_GET['utilisateur'] ?? $_POST['etu'] ?? $_POST['utilisateur'] ?? ''; 
     
     $valiny = voir_les_produits_a_vendre($OLONA);
@@ -63,6 +63,6 @@
                             <input type="submit" value="Vendre">
                         </form>
                     
-
+                        <a href="statistique.php">Voir les statistiques par catégorie</a>
 </body>
 </html>
