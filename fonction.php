@@ -199,6 +199,24 @@ function obtenir_ventes_membres_par_produit($id_produit) {
 }
 
 
+function recuperer_id($etu){
+    $db = dbconnect();
+    $sql = "SELECT id_membre FROM membre WHERE numero_etu = '$etu'";
+    $resultat = mysqli_query($db, $sql);
+    
+    $row = mysqli_fetch_assoc($resultat);
+    return $row['id_membre'];
+}
+
+function mivarotra($id_produit, $id_membre, $prix_vente, $quantite_dispo, $date_dispo, $photo = '10861192.jpg'){
+    $db = dbconnect();
+  
+    $sql = "INSERT INTO produit_membre (id_produit_membre, id_produit, id_membre, prix_vente, quantite_dispo, date_dispo, photo)
+            SELECT COALESCE(MAX(id_produit_membre), 0) + 1, '$id_produit', '$id_membre', '$prix_vente', '$quantite_dispo', '$date_dispo', '$photo'
+            FROM produit_membre";
+
+    return mysqli_query($db, $sql);
+}
 
 
 
