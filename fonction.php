@@ -133,7 +133,12 @@ function recuper_produit_non_vendu($id_membre){
     return $liste;
 }
 
+function mivarotra(){
+    
 
+
+
+}
 
 
 
