@@ -208,7 +208,7 @@ function recuperer_id($etu){
     return $row['id_membre'];
 }
 
-function mivarotra($id_produit, $id_membre, $prix_vente, $quantite_dispo, $date_dispo, $photo = '10861192.jpg'){
+function mivarotra($id_produit, $id_membre, $prix_vente, $quantite_dispo, $date_dispo, $photo){
     $db = dbconnect();
   
     $sql = "INSERT INTO produit_membre (id_produit_membre, id_produit, id_membre, prix_vente, quantite_dispo, date_dispo, photo)

@@ -17,7 +17,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="amidy.php" method="POST">
+<form action="amidy.php" method="POST" enctype="multipart/form-data">
     <select name="id_produit">
         <?php foreach ($valiny as $p) { ?>
             <option value="<?php echo $p['id_produit']; ?>"><?php echo $p['nom']; ?></option>
@@ -29,6 +29,7 @@
    <label for="ma-date">Date dispo :</label>
    <input type="date" id="ma-date" name="date">
 <p>Prix de reference <input type="number" name="prix"> </p>
+  <p> choidsisez une photo><input type="file" name="photo"> <p>
 
     <button type="submit">Vendre</button>
 </form>
