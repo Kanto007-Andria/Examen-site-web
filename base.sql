@@ -141,11 +141,6 @@ SET photo = '10861192.jpg'
 WHERE id_produit_membre IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
 
 
-CREATE TABLE photo_produit (
-    id_photo INT AUTO_INCREMENT PRIMARY KEY,
-    nom_photo VARCHAR(255),
-    id_produit_membre INT
-);
 
 
 Statistique
@@ -164,3 +159,10 @@ SELECT m.nom AS nom_membre, m.numero_etu, SUM(v.quantite) AS quantite_totale, SU
             JOIN membre m ON pm.id_membre = m.id_membre
             WHERE pm.id_produit = 1
             GROUP BY m.id_membre, m.nom, m.numero_etu
+
+
+
+
+INSERT INTO vente (date, heure, id_produit_membre, quantite) VALUES 
+('2026-07-20', '12:00:00', 1, 20),
+

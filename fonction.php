@@ -82,6 +82,13 @@ function acheter($id_produit_membre, $quantite_achetee) {
     $db = dbconnect();
     mysqli_query($db, "UPDATE produit_membre SET quantite_dispo = quantite_dispo - $quantite_achetee WHERE id_produit_membre = $id_produit_membre");
     return mysqli_query($db, "INSERT INTO vente (date, heure, id_produit_membre, quantite) VALUES (CURDATE(), CURTIME(), $id_produit_membre, $quantite_achetee)");
+  
+
+    $sql="INSERT INTO vente (date, heure, id_produit_membre, quantite) VALUES 
+(CURDATE(), CURTIME(), $id_produit_membre, $quantite_achetee);";
+
+ return mysqli_query($db, $sql);
+
 }
 
 function obtenir_total_ventes_membre($OLONA) {

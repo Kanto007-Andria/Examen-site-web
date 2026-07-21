@@ -20,9 +20,12 @@ VENTE:-AFIICHER LE TABLEAU CONTENAT LES PRODUITS VENDU
 
 5074
 VENDRE:
-fonction pour ajouter le produit du membre dans le produit_membre;
-creeer une fonction quii selct le oproduit de l7utilisateur pour le vendre
+fonction pour ajouter le produit du membre dans le produit_membre,
+ajout d'une balise, photo on fait empty si la personne insert alorsce sera celui que la personne entre;
+creer une fonction recuperer id
+creeer une fonction quii select le oproduit de l'utilisateur pour le vendre
 
-V2:
+
+
 ajout : ajout d'une colone photo
 ajout photo de base pour chaque ligne
